@@ -7,27 +7,32 @@ Developed multiple linear regression and time-series models to forecast the AMD�
 
 ```
 main/
-├── AR1_fit.R                  # Subset + AR(1) regression with VIF-based variable selection
-├── all_vars_fit.R             # Multiple linear regression using all predictors
-├── arima_forecasting.R        # Automated ARIMA order selection and forecasting
-├── arm_data_aug.R             # Load and preprocess Armenian macro data
-├── arm_df.RData               # Saved preprocessed Armenian data frame
-├── combine_data.R             # Merge Armenian and US data; compute features
-├── eda.R                      # Exploratory data analysis and plots
-├── data/                     # EDA output figures (histograms, boxplots, time series)
-│   ├── armenia_*.xlsx             # Raw Excel files for Armenian M2, GDP, inflation, etc.
+├── src/                       # Contains all code-related stuff, i.e. data augmentation, modeling, EDA, etc.
+│   ├── AR1_fit.R                  # Subset + AR(1) regression with VIF-based variable selection
+│   ├── all_vars_fit.R             # Multiple linear regression using all predictors
+│   ├── arima_forecasting.R        # Automated ARIMA order selection and forecasting
+│   ├── arm_data_aug.R             # Load and preprocess Armenian macro data
+│   ├── combine_data.R             # Merge Armenian and US data; compute features
+│   ├── eda.R                      # Exploratory data analysis and plots
+│   ├── us_data_aug.R              # Load and preprocess US macro data
+│   ├── random_walk_modeling.R     # Baseline random-walk model
+│   ├── subset_vars_fit.R          # Regression with significance & VIF‐based subset
+│   ├── time_fit.R                 # Time-trend regression model
+│   
+├── data/                      # Data Storage
+│   ├── armenia_*.xlsx         # Raw Excel files for Armenian M2, GDP, inflation, etc.
+│   └── usd_exchange_rate.csv      # Monthly AMD–USD exchange rate series
+│   
 ├── plots/                     # EDA output figures (histograms, boxplots, time series)
 │   ├── boxplot_by_year.png
 │   ├── boxplot_overall.png
 │   ├── histogram_density.png
 │   ├── qqplot_usd.png
 │   └── timeseries_usd.png
-├── random_walk_modeling.R     # Baseline random-walk model
-├── subset_vars_fit.R          # Regression with significance & VIF‐based subset
-├── time_fit.R                 # Time-trend regression model
-├── us_data_aug.R              # Load and preprocess US macro data
+│   
 ├── us_df.RData                # Saved preprocessed US data frame
-└── usd_exchange_rate.csv      # Monthly AMD–USD exchange rate series
+├── arm_df.RData               # Saved preprocessed Armenian data frame
+
 ```
 
 ## Prerequisites
